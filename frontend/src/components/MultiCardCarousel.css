@@ -1,0 +1,195 @@
+/* src/components/MultiCardCarousel.css */
+
+/* --- Theme variables --- */
+:root{
+  --accent-gradient: linear-gradient(90deg,#ff6ec7,#4facfe,#43e97b);
+  --card-bg: rgba(15,23,42,0.9);
+  --card-border: rgba(79,172,254,0.06);
+  --glass-shadow: 0 8px 30px rgba(7,13,25,0.45);
+}
+
+/* Container */
+.multi-carousel-container{
+  padding: 3rem 1.5rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  color: #e6eef6;
+}
+
+/* Title */
+.carousel-title{
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.4px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(79,172,254,0.12);
+}
+
+/* --------------- react-multi-carousel overrides --------------- */
+/* Ensure track aligns cards vertically and has comfortable padding */
+.multi-carousel-container .react-multi-carousel-list {
+  padding: 0 0.5rem;
+}
+
+.multi-carousel-container .react-multi-carousel-track {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Each slide wrapper — center card horizontally */
+.multi-carousel-container .react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Card */
+.carousel-card{
+  width: 100%;
+  max-width: 360px;            /* card size */
+  min-height: 320px;          /* visually balanced height */
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 1.3rem;
+  color: #e6eef6;
+  margin: 0;                  /* spacing handled by item padding */
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.32s cubic-bezier(.2,.9,.3,1), box-shadow 0.32s ease, border 0.32s ease;
+}
+
+/* Card heading + paragraph */
+.carousel-card h3{
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(90deg,#ff6ec7,#4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carousel-card p{
+  margin: 0;
+  color: rgba(230,238,246,0.9);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Hover / focus (keyboard accessible) */
+.carousel-card:hover,
+.carousel-card:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 18px 40px rgba(7,13,25,0.6);
+  border: 1px solid rgba(79,172,254,0.45);
+}
+
+/* Optional CTA area bottom alignment example (if you add a button) */
+.carousel-card .card-footer {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* --------------- Arrows --------------- */
+/* More specific selector to override library defaults */
+.multi-carousel-container .react-multi-carousel-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  color: #e6eef6;
+  border: 1px solid rgba(79,172,254,0.08);
+  box-shadow: 0 8px 20px rgba(11,105,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+/* Left / Right positions added by library; tweak offsets */
+.multi-carousel-container .react-multi-carousel-arrow.react-multiple-carousel__arrow--left {
+  left: -22px;
+}
+
+.multi-carousel-container .react-multi-carousel-arrow.react-multiple-carousel__arrow--right {
+  right: -22px;
+}
+
+.multi-carousel-container .react-multi-carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: linear-gradient(90deg,#4facfe,#43e97b);
+  color: #000;
+  box-shadow: 0 12px 30px rgba(67,233,123,0.12);
+}
+
+/* If arrows show text (prev/next), style inner icon */
+.multi-carousel-container .react-multi-carousel-arrow svg,
+.multi-carousel-container .react-multi-carousel-arrow i {
+  font-size: 18px;
+}
+
+/* --------------- Dots --------------- */
+.multi-carousel-container .react-multi-carousel-dot-list {
+  margin-top: 1rem;
+}
+
+.multi-carousel-container .react-multi-carousel-dot button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  padding: 0;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.multi-carousel-container .react-multi-carousel-dot--active button {
+  background: var(--accent-gradient);
+  box-shadow: 0 6px 18px rgba(79,172,254,0.18);
+  transform: scale(1.05);
+}
+
+/* --------------- Responsive tweaks --------------- */
+@media (max-width: 1200px){
+  .carousel-card { max-width: 320px; min-height: 280px; }
+  .multi-carousel-container .react-multi-carousel-arrow.react-multiple-carousel__arrow--left { left: -12px; }
+  .multi-carousel-container .react-multi-carousel-arrow.react-multiple-carousel__arrow--right { right: -12px; }
+}
+
+@media (max-width: 768px){
+  .multi-carousel-container { padding: 2rem 1rem; }
+  .carousel-title { font-size: 1.5rem; margin-bottom: 1rem; }
+  .carousel-card { max-width: 95%; min-height: auto; padding: 1rem; border-radius: 12px; }
+  /* hide arrows on small touch devices (users swipe) */
+  .multi-carousel-container .react-multi-carousel-arrow { display: none; }
+}
+
+/* --------------- Safety (increase specificity if library overrides) --------------- */
+/* If you find the library still overrides any style, uncomment the below block */
+/*
+.multi-carousel-container .react-multi-carousel-list,
+.multi-carousel-container .react-multi-carousel-track,
+.multi-carousel-container .react-multi-carousel-item,
+.multi-carousel-container .react-multi-carousel-arrow,
+.multi-carousel-container .react-multi-carousel-dot-list {
+  all: unset;
+}
+*/

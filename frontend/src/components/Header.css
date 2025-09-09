@@ -1,0 +1,43 @@
+/* modern AI/glow nav hover */
+.nav-link {
+  @apply text-white text-sm font-medium transition-all duration-300 ease-in-out;
+  position: relative;
+  
+}
+.head-style{
+  background-color:rgba(17, 25, 45, 0.9);
+  border: none;
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+/* hover effect: scale + glow + underline effect */
+.nav-link:hover {
+  @apply scale-110;
+  color: #ffffff; /* neon-blue glow */
+  text-shadow: 0 0 2px #00f7ff, 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #35e6ec;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 641px) {
+  
+.logIn{
+
+        margin-right: 45%;
+}
+
+}
