@@ -50,9 +50,9 @@ The project includes a responsive **React frontend** with modern UI and a secure
 ## 📷 Screenshots
 
 ### 🏠 Homepage
-![Homepage Banner](<img width="1886" height="913" alt="image" src="https://github.com/user-attachments/assets/4a238f10-a5f0-4fde-9f9b-98df63425e86" />)
-![Marquee Universities](<img width="1861" height="906" alt="image" src="https://github.com/user-attachments/assets/5591dbc3-17ec-47d4-b92a-a522b81a87c0" />
-)
+<img width="1886" height="913" alt="image" src="https://github.com/user-attachments/assets/4a238f10-a5f0-4fde-9f9b-98df63425e86" />
+<img width="1861" height="906" alt="image" src="https://github.com/user-attachments/assets/5591dbc3-17ec-47d4-b92a-a522b81a87c0" />
+
 <img width="1896" height="912" alt="image" src="https://github.com/user-attachments/assets/a2543a43-08d4-45ec-a4ca-1c9fa17a2560" />
 <img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/6a871775-5847-468e-960a-05f38a26e049" />
 <img width="1880" height="892" alt="image" src="https://github.com/user-attachments/assets/3a06e6cf-0f35-4f43-abcd-ac2457a37a7d" />
