@@ -57,7 +57,11 @@ The project includes a responsive **React frontend** with modern UI and a secure
 <img width="1885" height="910" alt="image" src="https://github.com/user-attachments/assets/6a871775-5847-468e-960a-05f38a26e049" />
 <img width="1880" height="892" alt="image" src="https://github.com/user-attachments/assets/3a06e6cf-0f35-4f43-abcd-ac2457a37a7d" />
 
+
 ---
+Database Image ->>>>>
+<img width="1918" height="902" alt="image" src="https://github.com/user-attachments/assets/ec60f2cf-101c-4bb7-a828-6d4b416fca87" />
+
 
 ## ⚡ Getting Started
 
@@ -65,3 +69,15 @@ The project includes a responsive **React frontend** with modern UI and a secure
 ```bash
 git clone https://github.com/your-username/nailib.git
 cd nailib
+Step to run project
+1. cd frontend/
+2. npm i
+3. npm start
+frontend will start
+
+4. cd backend/
+5. npm i
+6. node index.js
+backend will start
+
+Done.
